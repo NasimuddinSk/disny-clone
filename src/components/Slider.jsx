@@ -19,8 +19,6 @@ function Slider() {
   const getTrendingMovies = () => {
     GlobalApi.getTrendingVideos.then(res => {
       setMovieList(res.data.results);
-      console.log(movieList);
-
     });
   }
 
@@ -36,13 +34,11 @@ function Slider() {
   return (
     <div>
 
-      <HiOutlineChevronLeft className="hidden md:block text-white text-[30px] absolute mx-8 mt-[150px] cursor-pointer"
+      <HiOutlineChevronLeft className="hidden md:block text-white text-[30px] absolute mx-8 mt-[150px] cursor-pointer hover:bg-[#717171] rounded-lg "
         onClick={() => sliderLeft(elementRef.current)} />
 
-      <HiOutlineChevronRight className="hidden md:block text-white text-[30px] absolute mx-8 mt-[150px] cursor-pointer right-0 "
+      <HiOutlineChevronRight className="hidden md:block text-white text-[30px] absolute mx-8 mt-[150px] cursor-pointer right-0 hover:bg-[#717171] rounded-lg "
         onClick={() => sliderRight(elementRef.current)} />
-
-
 
       <div className='flex overflow-x-auto w-full px-16 py-4 scrollbar-hide scroll-smooth' ref={elementRef}>
         {
